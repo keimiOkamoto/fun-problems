@@ -7,7 +7,7 @@ import java.util.List;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-public class problem2Test {
+public class Problem2Test {
 
     private static final int [] ary = {1,2,3,4,5};
 

@@ -9,11 +9,11 @@ import java.util.stream.Collectors;
  *
  * Follow-up: what if you can't use division?
  */
-public class Problem2 {
+class Problem2 {
 
     private static final Function<List<Integer>, Optional<Integer>> getProductsum = (x -> x.stream().reduce((z , y) -> z * y));
 
-    public List<Integer> getProduct(int[] ary, List<Integer> buffer) {
+    List<Integer> getProduct(int[] ary, List<Integer> buffer) {
         List<Integer> array = Arrays.stream(ary).boxed().collect(Collectors.toList());
 
         for (int x = 0; x < array.size(); x++) {
