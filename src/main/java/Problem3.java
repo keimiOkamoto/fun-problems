@@ -11,7 +11,7 @@ public class Problem3 {
 
     public static void main(String[] args) {
         Node node = new Node();
-        List<Integer> integers = convertStringToAsciiList("helo");
+        List<Integer> integers = convertStringToAsciiList("helot");
         System.out.println(integers);
 
         Node hello = deserialise(integers, node);
@@ -19,6 +19,7 @@ public class Problem3 {
         System.out.println("should be 101   " + hello.leftChild.asciiValue);
         System.out.println("should be 108   " + hello.rightNode.asciiValue);
         System.out.println("should be 111   " + hello.rightNode.rightNode.asciiValue);
+//        System.out.println("should be 111   " + hello.rightNode.rightNode.rightNode.asciiValue);
     }
 
 
@@ -39,17 +40,17 @@ public class Problem3 {
             node.asciiValue = numberList.get(0);
 
             if (root.asciiValue > node.asciiValue) {
-                root.rightNode = node;
-                root.leftChild = deserialise(numberList.subList(1, numberList.size()), root.rightNode);
-            } else {
                 root.leftChild = node;
                 root.rightNode = deserialise(numberList.subList(1, numberList.size()), root.leftChild);
+            } else {
+                root.rightNode = node;
+                root.leftChild = deserialise(numberList.subList(1, numberList.size()), root.rightNode);
             }
         return node;
         }
     }
 
-    public static int factorial(int num) {
+    private static int factorial(int num) {
         if (num == 1) {
             return num;
         } else {
